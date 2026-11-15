@@ -1,3 +1,5 @@
+from abc import ABC, abstractmethod
+
 class Nodo:
     def __init__(self, dato):
         self.dato = dato
@@ -104,3 +106,50 @@ class ColaTurnos:
 
     def __len__(self):
         return self.tamano
+
+class Persona:
+    def __init__(self, documento, nombre):
+        self.documento = documento
+        self.nombre = nombre
+
+
+class Estudiante(Persona):
+   def __init__(self, documento, nombre):
+        super().__init__(documento, nombre)
+
+
+class Funcionario(Persona):
+    def __init__(self, documento, nombre, servicio_codigo):
+        super().__init__(documento, nombre)
+        self.servicio_codigo = servicio_codigo
+    pass
+
+
+class Servicio(ABC):
+    def __init__(self, codigo, nombre, tiempo_promedio):
+        self.codigo = codigo
+        self.nombre = nombre
+        self.tiempo_promedio = tiempo_promedio
+
+    @abstractmethod
+    def calcular_tiempo_estimado(self, personas_adelante):
+        pass
+
+
+class RegistroAcademico(Servicio):
+    def calcular_tiempo_estimado(self, personas_adelante):
+        return personas_adelante * self.tiempo_promedio
+
+class BienestarInstitucional(Servicio):
+    def calcular_tiempo_estimado(self, personas_adelante):
+        tiempo = personas_adelante * self.tiempo_promedio
+        if personas_adelante > 0:
+            tiempo += 5
+        return tiempo
+
+
+class SoporteTecnologico(Servicio):
+    def calcular_tiempo_estimado(self, personas_adelante):
+        tiempo = personas_adelante * self.tiempo_promedio
+        tiempo += (personas_adelante // 2) * 5
+        return tiempo
