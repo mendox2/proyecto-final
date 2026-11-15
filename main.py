@@ -1,4 +1,7 @@
 from abc import ABC, abstractmethod
+from dataclasses import dataclass
+from typing import Optional
+
 
 class Nodo:
     def __init__(self, dato):
@@ -153,3 +156,59 @@ class SoporteTecnologico(Servicio):
         tiempo = personas_adelante * self.tiempo_promedio
         tiempo += (personas_adelante // 2) * 5
         return tiempo
+
+@dataclass
+class Turno:
+    id: str
+    estudiante_documento: str
+    estudiante_nombre: str
+    servicio_codigo: str
+    servicio_nombre: str
+    fecha_creacion: str
+    estado: str = "En espera"
+    funcionario_documento: Optional[str] = None
+    fecha_llamado: Optional[str] = None
+    fecha_inicio: Optional[str] = None
+    fecha_finalizacion: Optional[str] = None
+
+
+class SistemaTurnos:
+    def __init__(self):
+        self.estudiantes = {}
+        self.funcionarios = {}
+
+        self.servicios = {
+            "RA": RegistroAcademico("RA", "Registro Academico", 8),
+            "BI": BienestarInstitucional("BI", "Bienestar Institucional", 12),
+            "ST": SoporteTecnologico("ST", "Soporte Tecnologico", 15),
+        }
+
+        self.turnos = []
+        self.historial = ListaEnlazada()
+
+        self.colas = {
+            codigo: ColaTurnos()
+            for codigo in self.servicios
+        }
+
+    def buscar_turno(self, identificador):
+        for turno in self.turnos:
+            if turno.id == identificador.upper():
+                return turno
+
+        return None
+
+    def obtener_siguiente_id(self, codigo_servicio):
+        mayor = 0
+
+        for turno in self.turnos:
+            if turno.servicio_codigo != codigo_servicio:
+                continue
+
+            try:
+                numero = int(turno.id.split("-")[-1])
+                mayor = max(mayor, numero)
+            except ValueError:
+                continue
+
+        return f"{codigo_servicio}-{mayor + 1:04d}"
