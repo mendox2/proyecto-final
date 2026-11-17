@@ -17,39 +17,39 @@ py main.py
 
 ## Ejecución 
 ### Una vez corra el programa se verá la siguiente interfaz
-![Pantalla inicial del proyecto](pantalla_principal.jpeg)
+![Pantalla inicial del proyecto](./Readme/pantalla_principal.jpeg)
 ### Registrar un estudiante
-![](registrar_estudiante.jpeg)
+![](./Readme/registrar_estudiante.jpeg)
 ### registrar funcionario
-![](registrar_funcionario.jpeg)
+![](./Readme/registrar_funcionario.jpeg)
 ### Se elige la dependencia del funcionario
-![](registrar_funcionario_2.jpeg)
+![](./Readme/registrar_funcionario_2.jpeg)
 ### Generar turno
-![](generar_turno.jpeg)
+![](./Readme/generar_turno.jpeg)
 ### Se elige la dependencia de la cual se solicita ayuda
-![](generar_turno_2.jpeg)
+![](./Readme/generar_turno_2.jpeg)
 ### Fila de espera
-![](fila_de_espera.jpeg)
+![](./Readme/fila_de_espera.jpeg)
 ### Se muestra el estado del estudiante
-![](fila_de_espera_2.jpeg)
+![](./Readme/fila_de_espera_2.jpeg)
 ### Se elige la dependencia del turno a llamar
-![](fila_de_espera_3.jpeg)
+![](./Readme/fila_de_espera_3.jpeg)
 ### Se muestra el estado en espera 
-![](en_espera.jpeg)
+![](./Readme/en_espera.jpeg)
 ### Iniciar la atención de un turno
-![](fila_de_espera_4.jpeg)
+![](./Readme/fila_de_espera_4.jpeg)
 ### Se muestra el estado en atención
-![](fila_de_espera_5.jpeg)
+![](./Readme/fila_de_espera_5.jpeg)
 ### Se finaliza la atención y se elige la dependencia
-![](fila_de_espera_6.jpeg)
+![](./Readme/fila_de_espera_6.jpeg)
 ### Se muestra el estado como finalizado
-![](fila_de_espera_7.jpeg)
+![](./Readme/fila_de_espera_7.jpeg)
 ### Descargar historial de turnos
-![](descargar_historial.jpeg)
+![](./Readme/descargar_historial.jpeg)
 ### Se guarda como "historial_documento del estudiante"
-![](descargar_historial_2.jpeg)
+![](./Readme/descargar_historial_2.jpeg)
 ### Estadisticas de todos los turnos
-![](estadisticas.jpeg)
+![](./Readme/estadisticas.jpeg)
 
 
 ## Autores 
